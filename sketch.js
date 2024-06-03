@@ -4,7 +4,7 @@ var alertFlash = true;
 function setup()
 {
 	createCanvas(600, 700);
-
+    // initialize
 	redButton = {
 		x: width / 2,
 		y: height / 2,
@@ -42,7 +42,8 @@ function draw()
 
 	}
 
-
+    
+    // red button
 	fill(255, 0, 0);
 	stroke(200, 30, 30);
 	strokeWeight(20);
@@ -51,7 +52,7 @@ function draw()
 	stroke(255, 100, 100);
 	arc(redButton.x, redButton.y, redButton.dia, redButton.dia, PI, PI * 2);
 
-
+    // bottom line
 	textAlign(CENTER);
 	textSize(40);
 	strokeWeight(1);
@@ -62,10 +63,12 @@ function draw()
 }
 
 function mousePressed()
-{
-	if (dist(mouseX, mouseY, redButton.x, redButton.y) < redButton.dia)
-	{
-		if (redButton.activated = true)
+{   
+    // check if mouse position is within red button and compare against radius
+	if (dist(mouseX, mouseY, redButton.x, redButton.y) < redButton.dia / 2)
+	{      
+        // use comparison operator instead of assignment operator
+		if (redButton.activated == true)
 		{
 			redButton.activated = false;
 		}
